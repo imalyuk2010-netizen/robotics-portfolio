@@ -3,15 +3,15 @@ import Frame from './Frame'
 import Robot from './Robot'
 import Rover from './Rover'
 import Tools from './Tools'
-import { projects, owner } from './config'
+import { roomProjects, owner } from './config'
 
 const wallMat = <meshStandardMaterial color="#0e3b2b" roughness={0.95} />
 
-function LightStrip({ position, length = 3 }) {
+export function LightStrip({ position, length = 3, intensity = 22 }) {
   return (
     <group position={position}>
       <mesh><boxGeometry args={[length, 0.04, 0.12]} /><meshBasicMaterial color="#fff6e8" toneMapped={false} /></mesh>
-      <pointLight intensity={22} distance={10} color="#ffe9cf" castShadow={false} />
+      <pointLight intensity={intensity} distance={10} color="#ffe9cf" castShadow={false} />
     </group>
   )
 }
@@ -72,7 +72,7 @@ export default function Room({ focus, onSelect, tool, onTool }) {
         <Text font="/fonts/mono.woff" position={[0, -0.78, 0]} fontSize={0.075} color="#b9c9bd" anchorX="center" maxWidth={2.6} textAlign="center" lineHeight={1.5}>{owner.about}</Text>
       </group>
 
-      {projects.map((p, i) => (
+      {roomProjects('robotics').map((p, i) => (
         <Frame key={p.id} project={p} index={i} active={focus === p.id} dim={(focus && focus !== p.id) || !!tool} onSelect={onSelect} />
       ))}
     </>

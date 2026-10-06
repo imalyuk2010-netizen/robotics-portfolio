@@ -54,3 +54,15 @@ nav button.on { background: var(--accent); color: #0a0a0a; }
 .process li:last-child blockquote { border-left-color: var(--accent); }
 @media (max-width: 640px) { .panel { max-height: 52vh; } }
 header { text-shadow: 0 1px 10px #06140f, 0 0 3px #06140f; }
+
+/* room switcher + fade between rooms */
+.rooms { display: flex; gap: 2px; padding: 3px; background: #081f15ec; border: 1px solid #ffffff18; border-radius: 999px; text-shadow: none; }
+.rooms button { padding: 7px 14px; font-size: 11px; }
+.rooms button:hover { background: #ffffff14; }
+.rooms button.on { background: var(--ink); color: #0e3b2b; }
+.fade { position: fixed; inset: 0; background: #06140f; opacity: 0; pointer-events: none; transition: opacity .45s ease; z-index: 5; }
+.fade.on { opacity: 1; pointer-events: auto; }
+@media (max-width: 640px) { header { flex-wrap: wrap; gap: 10px; } .rooms { order: 3; width: 100%; justify-content: center; } }
+header .logo, header a { background: #081f15ec; border: 1px solid #ffffff18; border-radius: 999px; padding: 7px 14px; text-shadow: none; }
+header a { border-bottom: 1px solid #ffffff18; }
+header a:hover { border-color: var(--accent); color: var(--accent); }

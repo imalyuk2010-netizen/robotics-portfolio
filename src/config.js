@@ -10,6 +10,12 @@ export const owner = {
   email: 'illiamaliuk123@gmail.com',
 }
 
+// Rooms you can walk between. Projects without a `room` belong to 'robotics'.
+export const rooms = [
+  { id: 'robotics', name: 'Robotics 1' },
+  { id: 'eng2', name: 'Engineering 2' },
+]
+
 // Projects in chronological order (oldest first). wall: 'back' (slots 0-4, left→right) then 'right' (slots 0-2, back→front).
 // `process` quotes are taken directly from my weekly reports ('…' marks a skipped passage).
 export const projects = [
@@ -364,6 +370,17 @@ export const projects = [
     ]
   }
 ]
+
+// Engineering 2 room — placeholders until real projects are added (same fields as above, plus room: 'eng2').
+projects.push(
+  ...[1, 2, 3].map((n) => ({
+    id: `eng2-${n}`, room: 'eng2', wall: 'back', slot: n, title: `Project ${n}`, date: 'Coming soon', image: null,
+    tags: ['Engineering 2', 'Coming soon'],
+    text: 'This frame is reserved for my Engineering 2 work. Projects, photos and my design process will be added here as the class goes on.',
+  }))
+)
+
+export const roomProjects = (room) => projects.filter((p) => (p.room || 'robotics') === room)
 
 // Tools on the workbench. x/z are positions on the bench (x: -2.1…2.1 left→right, z: -0.3 back … 0.3 front).
 export const tools = [

@@ -1,15 +1,22 @@
-import { owner, projects, tools } from './config'
+import { owner, rooms, roomProjects, tools } from './config'
 
-const NAV = [['overview', 'Studio'], ['gallery', 'Work'], ['bench', 'Bench'], ['about', 'About']]
+const NAV = { robotics: [['overview', 'Studio'], ['gallery', 'Work'], ['bench', 'Bench'], ['about', 'About']],
+  eng2: [['overview', 'Room'], ['gallery', 'Work'], ['bench', 'Desk'], ['about', 'About']] }
+const HINT = { robotics: 'click a frame or a tool on the bench', eng2: 'click a frame to open it' }
 
-export default function UI({ view, focus, tool, goto, close, step }) {
-  const list = tool ? tools : projects
+export default function UI({ view, focus, tool, room, switchRoom, goto, close, step }) {
+  const list = tool ? tools : roomProjects(room)
   const p = list.find((q) => q.id === (tool || focus))
   const i = p ? list.indexOf(p) : 0
   return (
     <div className="ui">
       <header>
         <span className="logo">{owner.name}<i>®</i></span>
+        <div className="rooms" role="tablist" aria-label="Rooms">
+          {rooms.map((r) => (
+            <button key={r.id} role="tab" aria-selected={room === r.id} className={room === r.id ? 'on' : ''} onClick={() => switchRoom(r.id)}>{r.name}</button>
+          ))}
+        </div>
         <a href={`mailto:${owner.email}`}>Get in touch ↗</a>
       </header>
 
@@ -39,11 +46,11 @@ export default function UI({ view, focus, tool, goto, close, step }) {
           </div>
         </aside>
       ) : (
-        <p className="hint">Move the mouse to look around · click a frame or a tool on the bench</p>
+        <p className="hint">Move the mouse to look around · {HINT[room]}</p>
       )}
 
       <nav>
-        {NAV.map(([k, label]) => (
+        {NAV[room].map(([k, label]) => (
           <button key={k} className={!focus && !tool && view === k ? 'on' : ''} onClick={() => goto(k)}>{label}</button>
         ))}
       </nav>
