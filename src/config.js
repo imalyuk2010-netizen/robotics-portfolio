@@ -4,7 +4,7 @@
 
 export const owner = {
   name: 'Illia Maliuk',
-  title: 'Robotics Design & Fabrication',
+  title: 'Robotics Portfolio',
   about:
     'I design, model and prototype robot mechanisms — CAD in Onshape, 3D printing, laser cutting and hands-on assembly. This studio is a walk-through of the work.',
   email: 'illiamaliuk123@gmail.com',
