@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
-const metal = { color: '#d9d9d9', metalness: 0.8, roughness: 0.3 }
-const orange = { color: '#ff5a1f', metalness: 0.3, roughness: 0.5 }
+const metal = { color: '#e9e2cf', metalness: 0.8, roughness: 0.3 }
+const orange = { color: '#0f6b46', metalness: 0.3, roughness: 0.5 }
 
 // Procedural 4-axis arm that idles on the workbench.
 export default function Robot(props) {

@@ -49,7 +49,7 @@ export default function Frame({ project, index, active, dim, onSelect }) {
       {/* frame */}
       <mesh castShadow position={[0, 0, -0.02]}>
         <boxGeometry args={[W + 0.12, H + 0.12, 0.06]} />
-        <meshStandardMaterial color={hover ? '#ff5a1f' : '#15171b'} roughness={0.6} metalness={0.4} />
+        <meshStandardMaterial color={hover ? '#d4ad55' : '#e9e2cf'} roughness={0.6} metalness={0.4} />
       </mesh>
       <mesh position={[0, 0, 0.012]}>
         <planeGeometry args={[W, H]} />
@@ -57,10 +57,10 @@ export default function Frame({ project, index, active, dim, onSelect }) {
       </mesh>
       {project.video && <VideoPlane src={project.video} />}
       {/* plaque */}
-      <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.17, 0.02]} fontSize={0.075} anchorX="left" color="#e8e6e1" letterSpacing={0.04}>
+      <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.17, 0.02]} fontSize={0.075} anchorX="left" color="#efe8d6" letterSpacing={0.04}>
         {`0${index + 1}  ${project.title.trim().toUpperCase()}`}
       </Text>
-      <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.27, 0.02]} fontSize={0.055} anchorX="left" letterSpacing={0.06} color="#ff5a1f">
+      <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.27, 0.02]} fontSize={0.055} anchorX="left" letterSpacing={0.06} color="#d4ad55">
         {project.date.toUpperCase()}
       </Text>
     </group>

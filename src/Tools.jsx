@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { Text, Billboard, useCursor } from '@react-three/drei'
 import { tools } from './config'
 
-const M = { metal: { color: '#c9ccd1', metalness: 0.8, roughness: 0.35 }, dark: { color: '#15171b', roughness: 0.6, metalness: 0.3 }, orange: { color: '#ff5a1f', roughness: 0.5, metalness: 0.3 } }
+const M = { metal: { color: '#e9e2cf', metalness: 0.8, roughness: 0.35 }, dark: { color: '#0b1410', roughness: 0.6, metalness: 0.3 }, orange: { color: '#0f6b46', roughness: 0.5, metalness: 0.3 } }
 const Mat = ({ k }) => <meshStandardMaterial {...M[k]} />
 
 function Drill() {
@@ -19,7 +19,7 @@ function Drill() {
 function Laser() {
   return (<group>
     <mesh castShadow position={[0, 0.09, 0]}><boxGeometry args={[0.55, 0.18, 0.36]} /><Mat k="dark" /></mesh>
-    <mesh position={[0, 0.21, 0]}><boxGeometry args={[0.5, 0.07, 0.32]} /><meshStandardMaterial color="#ff8a3d" transparent opacity={0.55} emissive="#ff5a1f" emissiveIntensity={0.4} /></mesh>
+    <mesh position={[0, 0.21, 0]}><boxGeometry args={[0.5, 0.07, 0.32]} /><meshStandardMaterial color="#d4ad55" transparent opacity={0.55} emissive="#d4ad55" emissiveIntensity={0.35} /></mesh>
     <mesh position={[0.2, 0.1, 0.185]}><boxGeometry args={[0.05, 0.03, 0.005]} /><meshBasicMaterial color="#3dff9a" toneMapped={false} /></mesh>
   </group>)
 }
@@ -33,7 +33,7 @@ function Printer() {
     <mesh position={[0, 0.06, 0]}><boxGeometry args={[0.28, 0.01, 0.26]} /><Mat k="metal" /></mesh>
     <mesh position={[0, 0.2, 0]}><boxGeometry args={[0.34, 0.015, 0.015]} /><Mat k="metal" /></mesh>
     <mesh ref={head} position={[0, 0.2, 0]}><boxGeometry args={[0.05, 0.05, 0.05]} /><Mat k="orange" /></mesh>
-    <mesh position={[0.27, 0.12, 0]} rotation-z={Math.PI / 2}><cylinderGeometry args={[0.08, 0.08, 0.07, 24]} /><meshStandardMaterial color="#3ddc84" roughness={0.6} /></mesh>
+    <mesh position={[0.27, 0.12, 0]} rotation-z={Math.PI / 2}><cylinderGeometry args={[0.08, 0.08, 0.07, 24]} /><meshStandardMaterial color="#d4ad55" roughness={0.6} /></mesh>
     <mesh position={[0.23, 0.12, 0]} rotation-z={Math.PI / 2}><cylinderGeometry args={[0.03, 0.03, 0.09, 16]} /><Mat k="dark" /></mesh>
   </group>)
 }
@@ -55,8 +55,8 @@ function Tap() {
 function Chain() {
   return (<group>
     <mesh position={[0, 0.015, 0]} rotation-x={Math.PI / 2} scale={[1.7, 1, 1]}><torusGeometry args={[0.07, 0.011, 6, 28]} /><Mat k="metal" /></mesh>
-    <mesh position={[-0.12, 0.03, 0]}><cylinderGeometry args={[0.055, 0.055, 0.02, 16]} /><meshStandardMaterial color="#ffd23d" metalness={0.4} roughness={0.5} /></mesh>
-    <mesh position={[0.12, 0.03, 0]}><cylinderGeometry args={[0.035, 0.035, 0.02, 12]} /><meshStandardMaterial color="#ffd23d" metalness={0.4} roughness={0.5} /></mesh>
+    <mesh position={[-0.12, 0.03, 0]}><cylinderGeometry args={[0.055, 0.055, 0.02, 16]} /><meshStandardMaterial color="#d4ad55" metalness={0.6} roughness={0.4} /></mesh>
+    <mesh position={[0.12, 0.03, 0]}><cylinderGeometry args={[0.035, 0.035, 0.02, 12]} /><meshStandardMaterial color="#d4ad55" metalness={0.6} roughness={0.4} /></mesh>
   </group>)
 }
 function Cad() {
@@ -87,9 +87,9 @@ function Tool({ tool, active, onSelect }) {
       <Model />
       {/* generous invisible hit box so tiny tools are easy to hit */}
       <mesh position={[0, 0.2, 0]}><boxGeometry args={[0.55, 0.45, 0.4]} /><meshBasicMaterial transparent opacity={0} depthWrite={false} /></mesh>
-      {lit && <mesh position={[0, 0.002, 0]} rotation-x={-Math.PI / 2}><ringGeometry args={[0.2, 0.215, 40]} /><meshBasicMaterial color="#ff5a1f" toneMapped={false} /></mesh>}
+      {lit && <mesh position={[0, 0.002, 0]} rotation-x={-Math.PI / 2}><ringGeometry args={[0.2, 0.215, 40]} /><meshBasicMaterial color="#d4ad55" toneMapped={false} /></mesh>}
       <Billboard visible={lit} position={[0, tool.id === 'cad' ? 0.85 : 0.72, 0]}>
-        <Text font="/fonts/mono.woff" fontSize={0.05} color={lit ? '#ff5a1f' : '#e8e6e1'} outlineWidth={0.004} outlineColor="#000">
+        <Text font="/fonts/mono.woff" fontSize={0.05} color={lit ? '#d4ad55' : '#efe8d6'} outlineWidth={0.004} outlineColor="#000">
           {tool.name.toUpperCase()}
         </Text>
       </Billboard>

@@ -39,8 +39,8 @@ export default function App() {
   return (
     <>
       <Canvas shadows camera={{ fov: 50, position: [0, 1.9, 8], near: 0.1, far: 60 }} dpr={[1, 2]}>
-        <color attach="background" args={['#07080a']} />
-        <fog attach="fog" args={['#07080a', 9, 22]} />
+        <color attach="background" args={['#06140f']} />
+        <fog attach="fog" args={['#06140f', 10, 24]} />
         <Suspense fallback={null}>
           <Room focus={focus} onSelect={select} tool={tool} onTool={pickTool} />
           <CameraRig view={view} focus={focus} tool={tool} />
