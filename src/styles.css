@@ -26,3 +26,29 @@ nav button.on { background: var(--accent); color: #0a0a0a; }
 .row .ghost { margin-left: auto; border-color: transparent; color: var(--mute); }
 @keyframes in { from { opacity: 0; transform: translateY(12px); } }
 @media (max-width: 640px) { .panel { max-width: none; align-self: stretch; } header a { display: none; } }
+
+.loading { position: fixed; inset: 0; z-index: 10; background: #07080a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; transition: opacity .8s ease, visibility .8s; }
+.loading.out { opacity: 0; visibility: hidden; pointer-events: none; }
+.loading .gear { width: 72px; color: var(--accent); animation: spin 6s linear infinite; }
+.loading .l-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
+.loading .l-name i { color: var(--accent); font-style: normal; }
+.loading .l-sub { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--mute); }
+.loading .bar { width: min(260px, 60vw); height: 2px; background: #ffffff1c; overflow: hidden; }
+.loading .bar span { display: block; height: 100%; background: var(--accent); transition: width .35s ease; }
+.loading .l-pct { font-size: 11px; color: var(--mute); letter-spacing: .1em; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .loading .gear { animation: none; } }
+
+/* project panel: scrollable, with the design-process timeline */
+.panel { max-width: 440px; max-height: calc(100vh - 190px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #ffffff30 transparent; overscroll-behavior: contain; }
+.panel .row.sticky { position: sticky; bottom: -24px; margin: 0 -24px -24px; padding: 14px 24px; background: linear-gradient(#0c0d1000, #0c0d10 35%); }
+.process { margin: 20px 0 8px; border-top: 1px solid #ffffff1c; padding-top: 18px; }
+.process h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; letter-spacing: .02em; }
+.process h3 small { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 10.5px; color: var(--mute); letter-spacing: .06em; margin-top: 4px; text-transform: uppercase; }
+.process ol { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 18px; position: relative; }
+.process li { border: 0; padding: 0; border-radius: 0; font-size: inherit; }
+.process .step { display: flex; align-items: center; gap: 10px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.process .step b { font-weight: 600; color: var(--mute); }
+.process blockquote { margin: 0; padding-left: 14px; border-left: 2px solid #ffffff22; font-size: 12.5px; line-height: 1.7; color: #cfd2d7; }
+.process li:last-child blockquote { border-left-color: var(--accent); }
+@media (max-width: 640px) { .panel { max-height: 52vh; } }

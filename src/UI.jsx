@@ -19,7 +19,20 @@ export default function UI({ view, focus, tool, goto, close, step }) {
           <h2>{(p.title || p.name).trim()}</h2>
           <p>{p.text}</p>
           <ul>{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
-          <div className="row">
+          {p.process && (
+            <section className="process" aria-label="Design process">
+              <h3>Design process <small>in my own words, from my weekly reports</small></h3>
+              <ol>
+                {p.process.map(([label, quote], n) => (
+                  <li key={n}>
+                    <span className="step"><b>{String(n + 1).padStart(2, '0')}</b>{label}</span>
+                    <blockquote>{quote}</blockquote>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+          <div className="row sticky">
             <button onClick={() => step(-1)}>← Prev</button>
             <button onClick={() => step(1)}>Next →</button>
             <button className="ghost" onClick={close}>Close ✕</button>

@@ -1,12 +1,13 @@
 import { Suspense, useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Loader } from '@react-three/drei'
+import Loading, { useAssetPreload } from './Loading'
 import Room from './Room'
 import CameraRig from './CameraRig'
 import UI from './UI'
 import { projects, tools } from './config'
 
 export default function App() {
+  const { progress, ready } = useAssetPreload()
   const [view, setView] = useState('overview')
   const [focus, setFocus] = useState(null) // project id
 
@@ -45,7 +46,7 @@ export default function App() {
           <CameraRig view={view} focus={focus} tool={tool} />
         </Suspense>
       </Canvas>
-      <Loader />
+      <Loading progress={progress} ready={ready} />
       <UI view={view} focus={focus} tool={tool} goto={goto} close={close} step={step} />
     </>
   )
