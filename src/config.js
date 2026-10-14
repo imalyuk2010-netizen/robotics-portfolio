@@ -6,7 +6,7 @@ export const owner = {
   name: 'Illia Maliuk',
   title: 'Robotics Portfolio',
   about:
-    'I design, model and prototype robot mechanisms — CAD in Onshape, 3D printing, laser cutting and hands-on assembly. This studio is a walk-through of the work.',
+    'This year in my robotics 1 class i am currently designing modeling and assembling essential robot mechanisms. This studio will show my work this year so far where I have done CAD, 3d printing, and laser cutting.',
   email: 'illiamaliuk123@gmail.com',
 }
 
@@ -371,13 +371,89 @@ export const projects = [
   }
 ]
 
-// Engineering 2 room — placeholders until real projects are added (same fields as above, plus room: 'eng2').
+// Engineering 2 (EngineerTech II) — written from the assignment briefs, not from my own reports yet.
+// The `process` steps describe how each assignment ran; swap them for my own notes/quotes as I add them.
+const brief = { processTitle: 'Process', processNote: 'from the assignment brief' }
 projects.push(
-  ...[1, 2, 3].map((n) => ({
-    id: `eng2-${n}`, room: 'eng2', wall: 'back', slot: n, title: `Project ${n}`, date: 'Coming soon', image: null,
-    tags: ['Engineering 2', 'Coming soon'],
-    text: 'This frame is reserved for my Engineering 2 work. Projects, photos and my design process will be added here as the class goes on.',
-  }))
+  {
+    id: 'rube', plaque: 'Rube Goldberg', room: 'eng2', wall: 'back', slot: 0, title: 'Rube Goldberg Machine', date: 'Aug 14', image: null,
+    tags: ['Rube Goldberg', 'Chain reaction', 'Video'],
+    text: 'The first assignment of Engineering 2: a Rube Goldberg machine, documented on video. The footage is going into this frame.',
+  },
+  {
+    id: 'vex-part', plaque: 'VEX Part', room: 'eng2', wall: 'back', slot: 1, title: 'Sketch, CAD & Print a VEX Part', date: 'Aug 21', image: null, ...brief,
+    tags: ['Sketching', 'CAD', '3D printing'],
+    text: 'Pick a part from the VEX hardware containers, then take it from a notebook sketch to a CAD model to a finished 3D print.',
+    process: [
+      ['Sketch', 'Sketch the part in the engineering sketchbook in 3-D and in orthographic views.'],
+      ['CAD', 'Model the part in CAD (Fusion 360 or Onshape).'],
+      ['Scale', 'Scale the part so it prints in under 30 minutes, and get approval before printing.'],
+      ['Print', 'Print it.'],
+      ['Document', 'Take a screenshot from the isometric "home" view with the design timeline visible at the bottom.'],
+    ],
+  },
+  {
+    id: 'levers', plaque: 'Levers', room: 'eng2', wall: 'back', slot: 2, title: 'Simple Machines: Levers', date: 'Sep 2', image: null, ...brief,
+    tags: ['Levers', 'Mechanical advantage', 'VEX'],
+    text: 'Design a device and investigate the mechanical advantage of all three lever classes, first by feel and then with measurements.',
+    process: [
+      ['Research & sketch', 'Research the three classes of levers, then sketch each one in the notebook, close to real VEX hardware.'],
+      ['Build', 'In a group of two or three, build one design for each lever class.'],
+      ['Qualitative', 'Investigate each lever without measuring tools, label the observations and take a photo of each lever.'],
+      ['CAD', 'Individually CAD an assembly of each design.'],
+      ['Quantitative', 'Repeat the investigation with lab masses, rulers and force sensors.'],
+      ['Conclusion', 'Write a paragraph with numerical evidence: when the mechanical advantage is greater or less than 1, and how the stabilizing force changes as the mass or the force sensor moves.'],
+    ],
+  },
+  {
+    id: 'wheel-axle', plaque: 'Wheel & Axle', room: 'eng2', wall: 'back', slot: 3, title: 'Simple Machines: Wheel & Axle', date: 'Sep 4', image: null, ...brief,
+    tags: ['Wheel and axle', 'Mechanical advantage', 'VEX'],
+    text: 'The same investigation for a wheel and axle, built so the wheel or axle radius can be changed.',
+    process: [
+      ['Design', 'Sketch and build a wheel and axle (it needs string) where either the wheel or the axle radius can be changed.'],
+      ['Investigate', 'Run a qualitative investigation first, then a quantitative one with lab masses, rulers and force sensors.'],
+      ['Question', 'Work out when the mechanical advantage is greater or less than 1, and what that means for the machine.'],
+      ['Teamwork', 'Support teammates who are new to CAD.'],
+      ['Conclusion', 'Write a paragraph with numerical evidence.'],
+    ],
+  },
+  {
+    id: 'pulleys', plaque: 'Pulley Systems', room: 'eng2', wall: 'back', slot: 4, title: 'Simple Machines: Pulley Systems', date: 'Sep 4', image: null, ...brief,
+    tags: ['Pulleys', 'Block and tackle', 'Mechanical advantage'],
+    text: 'Investigate a pulley system, comparing fixed and moving pulleys with a focus on block and tackle.',
+    process: [
+      ['Choose', 'Select a pulley system to study: fixed pulleys, moving pulleys, or a block and tackle.'],
+      ['Build & CAD', 'Build it and CAD it. Pulleys are not VEX parts, so either model one or use a "good enough" placeholder.'],
+      ['Investigate', 'Run the qualitative investigation, then measure with lab masses, rulers and force sensors.'],
+      ['Conclusion', 'Write a paragraph with numerical evidence for the mechanical advantage.'],
+    ],
+  },
+  {
+    id: 'gears-sprockets', plaque: 'Gears & Sprockets', room: 'eng2', wall: 'right', slot: 0, title: 'Gears & Sprockets', date: 'Sep 4', image: null, ...brief,
+    tags: ['Gear trains', 'Chain and sprocket', 'CAD'],
+    text: 'Investigate gear trains and chain-and-sprocket systems, in a design that works with both an odd and an even number of gears.',
+    process: [
+      ['Design', 'Make a design that allows both an odd and an even number of gears.'],
+      ['Qualitative', 'Comment on the relative speeds and the rotation directions of the gears.'],
+      ['CAD', 'Link the gear motion in CAD, following a tutorial video that skips gear creation.'],
+      ['Quantitative', 'Measure when the mechanical advantage is above or below 1 (a gear system behaves like a lever for force) and the rotation of each gear or sprocket.'],
+      ['Conclusion', 'Write a paragraph with numerical evidence.'],
+    ],
+  },
+  {
+    id: 'compound', plaque: 'Compound Machine', room: 'eng2', wall: 'right', slot: 1, title: 'Compound Machine', date: 'Sep 22', image: null, ...brief,
+    tags: ['Compound machine', 'Mechanical advantage', 'Fusion 360', 'Portfolio'],
+    text: 'Design, CAD and build a compound machine for an overly simple task, then calculate its mechanical advantage. It needs one human input that differs from the output, at least three mechanisms (including a simple machine and a gear train or chain and sprocket), and sections with a mechanical advantage above and below 1.',
+    process: [
+      ['Define', 'Choose the task (turn on the classroom lights, spin a pencil, lift a large lab mass, or an approved idea) and write a concise design statement.'],
+      ['Brainstorm', 'Brainstorm at least three ideas in the notebook.'],
+      ['Sketch', 'Draw an annotated isometric or orthographic sketch with each mechanism\'s mechanical advantage and drive ratios. Every team member sketches at least one full concept.'],
+      ['CAD', 'CAD each mechanism separately, one per team member, sharing files through a Fusion 360 team.'],
+      ['Build & test', 'Build it, test it, modify it, and photograph the finished machine.'],
+      ['Calculate', 'Fill in a notebook table for each mechanism (illustration, formula, substitute and solve, final answer with units), then calculate the overall mechanical advantage of the system.'],
+      ['Portfolio', 'Document the project in a portfolio entry: Define, Concept Design, CAD Design, Test and Iterate, Implement.'],
+    ],
+  },
 )
 
 export const roomProjects = (room) => projects.filter((p) => (p.room || 'robotics') === room)
@@ -385,7 +461,13 @@ export const roomProjects = (room) => projects.filter((p) => (p.room || 'robotic
 // Tools on the workbench. x/z are positions on the bench (x: -2.1…2.1 left→right, z: -0.3 back … 0.3 front).
 export const tools = [
   { id: 'cad', name: 'Onshape + Illustrator', x: -1.85, z: -0.1, tags: ['CAD', 'FeatureScript', 'Vector drawing'],
-    text: 'Where every project starts. I model gearboxes, shafts and chassis in Onshape (using FeatureScripts for exact shafts, spacers and belt/chain geometry) and export hairline drawings to Illustrator for laser cutting.' },
+    text: 'Where every project starts. I model gearboxes, shafts and chassis in Onshape (using FeatureScripts for exact shafts, spacers and belt/chain geometry) and export hairline drawings to Illustrator for laser cutting.',
+    processTitle: 'FRC Design course', processNote: 'from my Onshape assignments',
+    process: [
+      ['Account setup', 'Accepted the Onshape invitation and followed the frcdesign.org course setup: subscribed to FRCDesignAPP and added the custom FeatureScripts (Julia\'s, Alex\'s, Belt & Chain Gen, Origin Cube and 2471\'s).'],
+      ['Stage 1A · Fundamentals', 'Three sections of exercises (6, 4 and 5), with a screenshot for each: 15 in total.'],
+      ['Stage 1B · Power transmissions', 'Simple Gearbox (torque vs. speed and mechanical advantage), Two-Stage Gearbox, and Gear and Belt Gearbox (belts and pulleys, chain and sprockets).'],
+    ] },
   { id: 'laser', name: 'Laser Cutter', x: -0.95, z: -0.05, tags: ['Precision', 'Test boards'],
     text: 'Used to cut a test board with the exact bolt and bearing pattern of my gearbox bracket — far more repeatable than hand-drilling.' },
   { id: 'printer', name: '3D Printer (Bambu Lab)', x: 1.0, z: -0.05, tags: ['Bambu Studio', 'Prototyping', 'Tolerances'],
@@ -398,4 +480,14 @@ export const tools = [
     text: 'Practiced tapping threads on rejected hex shafts first — keeping the tap straight and backing out regularly — before cutting the final shaft.' },
   { id: 'chain', name: 'Chain & Sprockets', x: 0.3, z: 0.3, tags: ['#25 chain', 'Chain breaker', 'Ratios'],
     text: 'Learning chain drives for my in-progress chain project: sprocket pitch vs. clearance diameter, 120°+ of wrap to prevent skipping, and how a chain breaker and master link join a chain.' },
+  { id: 'safety', name: 'Safety Training', x: 1.45, z: 0.3, tags: ['Shop safety', 'PPE', 'Electronics safety'],
+    text: 'Safety comes before grades or projects. Before using each tool or area I wrote a safety summary, did an in-person demo and took a test, and I scored full marks on all five tests.',
+    processTitle: 'Key rules', processNote: 'from my safety write-ups',
+    process: [
+      ['General shop', 'Safety is the number one priority, above grades or projects. Dress so nothing can catch in a moving part (shirt tucked in, sleeves rolled up, jewelry off, hair tied back, no gloves at machines, closed-toed shoes) and always wear eye protection.'],
+      ['Hand & power tools', 'Five basic rules: keep tools in good working order, use them only as designed, inspect them before use, follow the manufacturer\'s instructions, and always use PPE.'],
+      ['Drill press', 'Remove the chuck key right after tightening, clamp the workpiece, and wait for the spindle to stop. I plan to make securing the piece, pulling the key and checking the table lock automatic.'],
+      ['Laser cutter', 'Ventilation matters because of toxic fumes, so use a multi-gas respirator and laser safety glasses, keep a CO2 extinguisher and a water spray bottle close, wait at least 30 seconds before opening, and never leave the machine unattended.'],
+      ['Electronics', 'Fuse first off the positive terminal with the switch right after it, confirm a circuit is de-energized with a multimeter, keep signal and power lines separate, and use a single ground point.'],
+    ] },
 ]

@@ -70,7 +70,21 @@ function Cad() {
     </Text>
   </group>)
 }
-const MODELS = { cad: Cad, laser: Laser, printer: Printer, drill: Drill, gearbox: Gearbox, tap: Tap, chain: Chain }
+function Safety() {
+  // safety glasses resting flat on the bench
+  const lens = <meshStandardMaterial color="#9fe3c0" transparent opacity={0.45} roughness={0.1} />
+  return (<group rotation-y={0.25}>
+    {[-0.075, 0.075].map((x) => (
+      <group key={x} position={[x, 0.012, 0]}>
+        <mesh rotation-x={Math.PI / 2}><torusGeometry args={[0.06, 0.008, 8, 28]} /><Mat k="dark" /></mesh>
+        <mesh rotation-x={-Math.PI / 2}><circleGeometry args={[0.058, 28]} />{lens}</mesh>
+      </group>
+    ))}
+    <mesh position={[0, 0.012, 0]} rotation-z={Math.PI / 2}><cylinderGeometry args={[0.006, 0.006, 0.05, 8]} /><Mat k="dark" /></mesh>
+    {[-0.135, 0.135].map((x) => <mesh key={x} position={[x * 1.05, 0.012, -0.1]} rotation-y={x > 0 ? 0.12 : -0.12}><boxGeometry args={[0.012, 0.01, 0.2]} /><Mat k="dark" /></mesh>)}
+  </group>)
+}
+const MODELS = { cad: Cad, laser: Laser, printer: Printer, drill: Drill, gearbox: Gearbox, tap: Tap, chain: Chain, safety: Safety }
 
 export const BENCH_TOP = 0.935
 export const BENCH_Z = -2.45

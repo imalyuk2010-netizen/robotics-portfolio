@@ -23,7 +23,7 @@ export function makePlaceholder(title, index) {
   g.setLineDash([])
   g.fillStyle = '#0e3b2b'; g.font = '600 54px "Space Grotesk", sans-serif'; g.fillText(title, 56, 96)
   g.fillStyle = '#9a7a2e'; g.font = '28px "JetBrains Mono", monospace'
-  g.fillText(`COMING SOON  /  0${index + 1}`, 56, h - 48)
+  g.fillText(`PHOTO COMING SOON  /  0${index + 1}`, 56, h - 48)
   const t = new THREE.CanvasTexture(c)
   t.colorSpace = THREE.SRGBColorSpace
   t.anisotropy = 8

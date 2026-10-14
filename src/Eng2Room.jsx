@@ -97,7 +97,7 @@ function PartsShelf() {
     [0.15, 1.15, C.brass, 'box'], [-0.2, 1.15, '#0f6b46', 'cyl'], [0.05, 1.7, C.cream, 'box'],
   ]
   return (
-    <group position={[-3.15, 0, -2.75]}>
+    <group position={[-3.75, 0, 2.85]} rotation-y={Math.PI / 2}>
       {[-0.42, 0.42].map((x) => <mesh key={x} castShadow position={[x, 1.0, 0]}><boxGeometry args={[0.04, 2.0, 0.4]} /><meshStandardMaterial color={C.green} /></mesh>)}
       {[0.05, 0.5, 1.05, 1.6, 1.98].map((y) => (
         <mesh key={y} receiveShadow castShadow position={[0, y, 0]}><boxGeometry args={[0.88, 0.03, 0.4]} /><meshStandardMaterial color={C.cream} roughness={0.7} /></mesh>
@@ -122,9 +122,9 @@ function Whiteboard() {
         <mesh key={x} position={[x, -0.83, 0.06]} rotation-z={Math.PI / 2}><cylinderGeometry args={[0.012, 0.012, 0.12, 8]} /><meshStandardMaterial color={c} /></mesh>
       ))}
       <Text font="/fonts/display.woff" position={[0, 0.42, 0.015]} fontSize={0.34} color={C.green} anchorX="center" anchorY="middle">ENGINEERING 2</Text>
-      <Text font="/fonts/mono.woff" position={[0, 0.1, 0.015]} fontSize={0.09} color={C.brass} anchorX="center" letterSpacing={0.2}>CLASS PORTFOLIO</Text>
+      <Text font="/fonts/mono.woff" position={[0, 0.1, 0.015]} fontSize={0.09} color={C.brass} anchorX="center" letterSpacing={0.2}>ENGINEERTECH II</Text>
       <Text font="/fonts/mono.woff" position={[0, -0.28, 0.015]} fontSize={0.07} color="#3e5a4d" anchorX="center" maxWidth={2.5} textAlign="center" lineHeight={1.55}>
-        Projects from my Engineering 2 class. New work gets added here as the class goes on.
+        Simple machines investigated with VEX hardware: sketch it, build it, CAD it, then test its mechanical advantage.
       </Text>
     </group>
   )

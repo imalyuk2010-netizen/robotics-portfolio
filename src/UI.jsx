@@ -27,8 +27,8 @@ export default function UI({ view, focus, tool, room, switchRoom, goto, close, s
           <p>{p.text}</p>
           <ul>{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
           {p.process && (
-            <section className="process" aria-label="Design process">
-              <h3>Design process <small>in my own words, from my weekly reports</small></h3>
+            <section className="process" aria-label={p.processTitle || 'Design process'}>
+              <h3>{p.processTitle || 'Design process'} <small>{p.processNote || 'in my own words, from my weekly reports'}</small></h3>
               <ol>
                 {p.process.map(([label, quote], n) => (
                   <li key={n}>

@@ -58,7 +58,7 @@ export default function Frame({ project, index, active, dim, onSelect, frameColo
       {project.video && <VideoPlane src={project.video} />}
       {/* plaque */}
       <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.17, 0.02]} fontSize={0.075} anchorX="left" color={ink} letterSpacing={0.04}>
-        {`0${index + 1}  ${project.title.trim().toUpperCase()}`}
+        {`0${index + 1}  ${(project.plaque || project.title).trim().toUpperCase()}`}
       </Text>
       <Text font="/fonts/mono.woff" position={[-W / 2, -H / 2 - 0.27, 0.02]} fontSize={0.055} anchorX="left" letterSpacing={0.06} color={dateColor}>
         {project.date.toUpperCase()}
