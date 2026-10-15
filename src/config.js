@@ -459,9 +459,9 @@ projects.push(
       ["/projects/eng2/pulley-sketch.jpg", "Pulley: sketch"],
       ["/projects/eng2/pulley-cad.jpg", "Pulley: CAD"],
       ["/projects/eng2/pulley-cad-2.jpg", "Pulley: CAD, second angle"],
-      ["/projects/eng2/pulley-cad-3.jpg", "Pulley: CAD, side view"],
-      ["/projects/eng2/pulley-cad-4.jpg", "Pulley: CAD, with the lever arm"],
-      ["/projects/eng2/pulley-cad-5.jpg", "Pulley: CAD, third angle"],
+      ["/projects/eng2/pulley-cad-3.jpg", "Pulley: CAD, third angle"],
+      ["/projects/eng2/pulley-cad-4.jpg", "Pulley: CAD, fourth angle"],
+      ["/projects/eng2/pulley-cad-5.jpg", "Pulley: CAD, fifth angle"],
       ["/projects/eng2/pulley-notes.jpg", "Pulley: notebook analysis"],
     ],
     process: [
