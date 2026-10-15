@@ -4,7 +4,7 @@
 
 export const owner = {
   name: 'Illia Maliuk',
-  title: 'Robotics Portfolio',
+  title: 'Engineering Portfolio',
   about:
     'This year in my robotics 1 class i am currently designing modeling and assembling essential robot mechanisms. This studio will show my work this year so far where I have done CAD, 3d printing, and laser cutting.',
   email: 'illiamaliuk123@gmail.com',

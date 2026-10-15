@@ -1,4 +1,4 @@
-# Robotics Studio — 3D portfolio
+# Engineering Portfolio — 3D studio
 
 ```
 npm install
