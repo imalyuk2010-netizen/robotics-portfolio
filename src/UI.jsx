@@ -26,6 +26,19 @@ export default function UI({ view, focus, tool, room, switchRoom, goto, close, s
           <h2>{(p.title || p.name).trim()}</h2>
           <p>{p.text}</p>
           <ul>{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
+          {p.gallery && (
+            <section className="gallery" aria-label="Sketches, CAD and notebook pages">
+              <h3>Sketches, CAD &amp; notebook <small>click an image to open it full size</small></h3>
+              <div>
+                {p.gallery.map(([src, cap]) => (
+                  <figure key={src}>
+                    <a href={src} target="_blank" rel="noopener noreferrer"><img src={src} alt={cap} loading="lazy" /></a>
+                    <figcaption>{cap}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )}
           {p.process && (
             <section className="process" aria-label={p.processTitle || 'Design process'}>
               <h3>{p.processTitle || 'Design process'} <small>{p.processNote || 'in my own words, from my weekly reports'}</small></h3>
