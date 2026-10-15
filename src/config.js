@@ -326,6 +326,15 @@ export const projects = [
       "Iteration"
     ],
     "text": "A chain-driven gearbox that is still in progress. So far: the research, the math for the layout, three rounds of gusset iteration, and a clear test plan for when the chain goes on.",
+    "galleryTitle": "Build photos",
+    "gallery": [
+      ["/projects/chain/gusset-bearing.jpg", "The gusset holding the flanged bearing, with the sprocket and shaft", "photo"],
+      ["/projects/chain/gearbox-on-board.jpg", "The gearbox on the board", "photo"],
+      ["/projects/chain/sprocket-shaft.jpg", "Sprocket on the printed shaft at the gearbox hole", "photo"],
+      ["/projects/chain/gusset-sprocket.jpg", "Gusset, bearing and sprocket on the six-inch board", "photo"],
+      ["/projects/chain/gusset-back.jpg", "Back of the board: the gusset bolted on with two bolts and nuts", "photo"],
+      ["/projects/chain/both-shafts.jpg", "Both shafts and sprockets on the laser-cut board, six inches apart", "photo"]
+    ],
     "process": [
       [
         "Research first",

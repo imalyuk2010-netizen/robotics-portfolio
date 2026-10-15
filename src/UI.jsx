@@ -27,11 +27,11 @@ export default function UI({ view, focus, tool, room, switchRoom, goto, close, s
           <p>{p.text}</p>
           <ul>{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
           {p.gallery && (
-            <section className="gallery" aria-label="Sketches, CAD and notebook pages">
-              <h3>Sketches, CAD &amp; notebook <small>click an image to open it full size</small></h3>
+            <section className="gallery" aria-label={p.galleryTitle || 'Sketches, CAD and notebook pages'}>
+              <h3>{p.galleryTitle || 'Sketches, CAD & notebook'} <small>click an image to open it full size</small></h3>
               <div>
-                {p.gallery.map(([src, cap]) => (
-                  <figure key={src}>
+                {p.gallery.map(([src, cap, kind]) => (
+                  <figure key={src} className={kind}>
                     <a href={src} target="_blank" rel="noopener noreferrer"><img src={src} alt={cap} loading="lazy" /></a>
                     <figcaption>{cap}</figcaption>
                   </figure>

@@ -77,3 +77,5 @@ header a:hover { border-color: var(--accent); color: var(--accent); }
 .gallery img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform .25s; }
 .gallery a:hover img { transform: scale(1.04); }
 .gallery figcaption { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mute); margin-top: 6px; line-height: 1.4; }
+.gallery figure.photo a { aspect-ratio: 1; background: #0b1410; }
+.gallery figure.photo img { object-fit: cover; }
